@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream India School | Rayagada</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables for Theme (Based on Logo) */
+        :root {
+            --primary-blue: #0a2a5e;
+            --secondary-blue: #174a8b;
+            --gold: #d4af37;
+            --light-gold: #f4d068;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --text-dark: #333333;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Floating Action Buttons (WhatsApp & Call) */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .float-btn:hover { transform: scale(1.1); }
+        .whatsapp-btn { background-color: #25D366; }
+        .call-btn { background-color: var(--primary-blue); }
+
+        /* Header / Navbar */
+                /* Header / Navbar (Fixed Layout) */
+               /* =========================================
+           HEADER / NAVBAR CSS
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0; 
+        }
+
+        /* Logo aur Text */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img { 
+            height: 55px; 
+            border-radius: 5px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-text h2 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .logo-text span {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Desktop Menu Links */
+        .nav-links { 
+            display: flex; 
+            gap: 22px; 
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            color: var(--primary-blue);
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover { 
+            color: var(--gold); 
+        }
+
+        /* 👇 MOBILE MENU ICON (Desktop par hide rahega) 👇 */
+        .mobile-menu-btn {
+            display: none; /* Desktop pe nahi dikhega */
+            font-size: 26px;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+
+        /* =========================================
+           HERO SECTION CSS
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--light-bg);
+            padding-top: 130px; /* Header ke niche space */
+            padding-bottom: 60px;
+        }
+                /* Naya Hero Slogan Style */
+        .hero-slogan {
+            display: inline-block;
+            background-color: rgba(212, 175, 55, 0.15); /* Halka Gold Background */
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem !important;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 15px !important;
+            border-left: 4px solid var(--gold);
+            text-transform: uppercase;
+        }
+                /* Naya Hero Button Style (Fix) */
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-3px);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-content h1 { 
+            font-size: 3.8rem; 
+            margin-bottom: 20px; 
+            color: var(--primary-blue);
+            line-height: 1.1;
+        }
+        
+        .hero-content h1 span { 
+            color: var(--gold); 
+            display: block; 
+        }
+        
+        .hero-content p { 
+            font-size: 1.15rem; 
+            margin-bottom: 35px; 
+            color: #555;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(10, 42, 94, 0.15);
+            object-fit: cover;
+            height: 500px; 
+        }
+
+
+        /* =========================================
+           RESPONSIVE (Mobile & Tablet) CSS
+           ========================================= */
+        @media (max-width: 991px) {
+            /* 👇 Mobile par menu icon dikhega 👇 */
+            .mobile-menu-btn { 
+                display: block; /* Sirf mobile pe show hoga */
+            }
+            
+            .logo-text { 
+                display: none; /* Mobile pe sirf logo dikhega, text nahi */
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { 
+                display: flex; 
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content h1 { 
+                font-size: 2.5rem; 
+            }
+            .hero-image img { 
+                height: 350px; 
+            }
+        }
+                /* About Section */
+        .about { padding: 100px 0; background-color: var(--light-bg); }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px; /* Mission vision se gap dene ke liye */
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-text h2 { color: var(--primary-blue); margin-bottom: 20px; font-size: 2rem;}
+        .about-text p { margin-bottom: 15px; line-height: 1.8; color: #555; }
+        /* Mission & Vision Cards Styling */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px; /* Width thodi aur badha di */
+            margin: 0 auto; 
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 40px; 
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--gold);
+            text-align: left; /* Text ko left align kiya taaki padhne me aasaani ho */
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Icon ko gol background dena */
+        .mv-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 2px dashed var(--gold);
+        }
+
+        .mv-icon i {
+            font-size: 30px;
+            color: var(--primary-blue);
+        }
+
+        .mv-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem; 
+            margin-bottom: 15px;
+        }
+
+        .mv-card p {
+            font-size: 1.05rem; 
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Checkmark List Styling */
+        .mv-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mv-list li {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .mv-list li i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-top: 3px; /* Text ke sath align karne ke liye */
+        }
+        /* Academics Section */
+        .academics { padding: 100px 0; }
+               /* Academics Section */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 cards ek row mein */
+            gap: 30px; /* Cards ke beech ka gap */
+        }
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--gold);
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 25px; text-align: center; }
+        .card-content h3 { color: var(--primary-blue); margin-bottom: 15px; }
+        .card-content p { color: #666; font-size: 0.95rem; line-height: 1.6;}
+
+        /* Special Programs Section (IIT/Medicine) */
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .program-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .program-box:hover {
+            transform: translateY(-5px);
+            border-left: 5px solid var(--gold);
+        }
+
+        .program-icon {
+            font-size: 35px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .program-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .program-box p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+             .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Disclosure Section */
+        .disclosure { padding: 80px 0; background-color: var(--white); }
+        
+        .disclosure-container {
+            background: var(--light-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .disclosure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .disclosure-category h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        .download-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .download-list li {
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+            color: var(--primary-blue);
+        }
+
+        .download-btn i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover i {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        /* Mobile Fix for Disclosure */
+        @media (max-width: 768px) {
+            .disclosure-container { padding: 20px; }
+            .disclosure-grid { grid-template-columns: 1fr; }
+            .logo-text { display: none !important; }
+        }
+
+        /* Best Results Section */
+        .results-section { 
+            padding: 100px 0; 
+            background-color: var(--white); 
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results-list li {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .results-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .results-list i {
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-top: 5px;
+        }
+
+        .results-list h4 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .results-list p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Right Side Highlight Box */
+        .highlight-box {
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(10, 42, 94, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: scale(1.05);
+        }
+
+        .highlight-box i {
+            font-size: 50px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .highlight-box h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .highlight-box p {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .results-highlight {
+                display: flex;
+                gap: 20px;
+                flex-direction: row;
+            }
+            .results-highlight .highlight-box {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .results-highlight {
+                flex-direction: column;
+            }
+            .results-highlight .highlight-box {
+                margin-top: 0 !important;
+            }
+        }
+
+        /* Facilities Section */
+        .facilities { padding: 100px 0; background-color: var(--primary-blue); color: var(--white); }
+        .facilities .section-title { color: var(--white); }
+       .facility-grid {
+            display: grid;
+            /* Auto-fit use karne se ye screen ke hisaab se adjust hoga, 
+               par minimum width 300px rakhi hai taaki cards acche dikhein */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .facility-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .facility-card:hover { 
+            background: rgba(255,255,255,0.2); 
+            transform: translateY(-5px);
+        }
+        
+        .facility-card i { 
+            font-size: 45px; 
+            color: var(--gold); 
+            margin-bottom: 20px; 
+        }
+        
+        .facility-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .facility-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #d1d5db; /* Halka grey color text ke liye */
+        }
+        /* Gallery Section */
+        .gallery { padding: 100px 0; background: var(--light-bg); }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery-item img:hover { transform: scale(1.03); }
+
+        /* Forms (Admission & Contact) */
+        .form-section { padding: 100px 0; }
+        .admission { background: url('admission.png') center/cover fixed; position: relative; }
+        .admission::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(10,42,94,0.85); }
+        .admission .container { position: relative; z-index: 1; }
+        .admission .section-title { color: var(--white); }
+        
+        .form-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.5rem;}
+        .contact-info p { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px;}
+        .contact-info i { color: var(--gold); font-size: 1.2rem;}
+
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary-blue); }
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: 0.3s;
+        }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--gold); }
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.1rem;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .submit-btn:hover { background: var(--secondary-blue); }
+
+        /* Footer */
+                /* Updated Big Footer */
+        footer {
+            background: #061c3f; /* Thoda dark blue footer ke liye */
+            color: var(--white);
+            padding: 70px 0 20px 0;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Column 1: Brand & About */
+        .footer-brand img {
+            height: 70px;
+            margin-bottom: 20px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        .footer-brand p {
+            color: #b0c4de;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+        }
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Column Headings */
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        /* Quick Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #b0c4de;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .footer-links a i {
+            font-size: 0.7rem;
+            color: var(--gold);
+            transition: 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        /* Contact Info */
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-contact li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #b0c4de;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .footer-contact li i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        /* Bottom Copyright */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive for Footer */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            footer {
+                padding: 50px 0 20px 0;
+            }
+        }
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+             .about-grid { grid-template-columns: 1fr; }
+            
+            .mission-vision {
+                grid-template-columns: 1fr; /* Mobile par ek ke niche ek aayenge */
+                gap: 20px;
+            }
+            .mv-card {
+                padding: 30px 20px;
+            }
+            .form-container { padding: 20px; }
+                 }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-btns">
+        <a href="tel:9439674674" class="float-btn call-btn" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/919439674674?text=Hello%20Dream%20India%20School,%20I%20want%20to%20know%20more." target="_blank" class="float-btn whatsapp-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Header / Navbar -->
+       <!-- Header / Navbar -->
+        <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-container">
+            <!-- Logo & Text (Ek line mein aane ke liye) -->
+            <a href="#home" class="logo">
+                <img src="DIS logo.png" alt="Dream India School Logo">
+                <div class="logo-text">
+                    <h2>Dream India School</h2>
+                    <span>Rayagada, Odisha</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <!-- <div class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div> -->
+            
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                                        <li><a href="#principal" onclick="toggleMenu()">Principal</a></li>
+                    <li><a href="#academics" onclick="toggleMenu()">Academics</a></li>
+                    <li><a href="#disclosure" onclick="toggleMenu()">Disclosure</a></li>
+                    <li><a href="#facilities" onclick="toggleMenu()">Facilities</a></li>
+                    <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+                    <li><a href="#admission" onclick="toggleMenu()">Admission</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </nav>
+              <div class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+        <!-- Modern Hero Section -->
+        <section id="home" class="hero">
+        <div class="container hero-container">
+            
+            <!-- Left Side: Text -->
+            <div class="hero-content reveal">
+                <!-- Naya Slogan Yahan Add Kiya Gaya Hai -->
+                <p class="hero-slogan">Your Pathway to Success Begins Here</p>
+                
+                <h1>Welcome to <br><span>Dream India School</span></h1>
+                <p>DIS is a Senior Secondary & High Tech School affiliated to CBSE, New Delhi. We prepare students to have a competitive edge with the best of technology in education.</p>
+                <a href="#admission" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);">Apply for Admission</a>
+            </div>
+
+            <!-- Right Side: Image (Aapki School ki Photo) -->
+            <div class="hero-image reveal" style="transition-delay: 0.2s;">
+                <img src="hero_background.jfif" alt="Dream India School Campus">
+            </div>
+
+        </div>
+    </section>
+    
+        <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img reveal">
+                    <img src="about_us.jfif" alt="About Our School">
+                </div>
+                <div class="about-text reveal">
+                    <h2>About Our School</h2>
+                    <p>Dream India School, located in Sai Priya Nagar, Rayagada, is committed to providing holistic education that balances academics with co-curricular activities.</p>
+                    <p>We believe in creating a safe, stimulating, and supportive environment where every child is encouraged to explore their potential and develop a lifelong love for learning.</p>
+                    <p>Our dedicated faculty and staff work tirelessly to ensure that students not only excel in their studies but also grow into responsible and compassionate citizens.</p>
+                </div>
+            </div>
+
+                      <!-- Mission & Vision -->
+            <div class="mission-vision reveal">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide a holistic and transformative education that nurtures intellectual curiosity, moral values, and physical well-being. We are committed to:</p>
+                    <ul class="mv-list">
+                        <li><i class="fas fa-check-circle"></i> Delivering academic excellence through innovative teaching methods.</li>
+                        <li><i class="fas fa-check-circle"></i> Creating a safe, inclusive, and stimulating learning environment.</li>
+                        <li><i class="fas fa-check-circle"></i> Fostering critical thinking, creativity, and problem-solving skills.</li>
+                        <li><i class="fas fa-check-circle"></i> Instilling a sense of responsibility, discipline, and respect for others.</li>
+                    </ul>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To emerge as a premier educational institution in Odisha, recognized globally for shaping future leaders and responsible citizens. We envision:</p>
+                    <ul class="mv-list">
+                        <li><i class="fas fa-check-circle"></i> A school where every child discovers and realizes their true potential.</li>
+                        <li><i class="fas fa-check-circle"></i> An environment that blends modern technology with traditional values.</li>
+                        <li><i class="fas fa-check-circle"></i> Empowered students who are ready to face global challenges with confidence.</li>
+                        <li><i class="fas fa-check-circle"></i> A community of lifelong learners and compassionate human beings.</li>
+                    </ul>
+                </div>
+            </div>
+             </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Director's Message Section -->
+    <section id="director" class="about" style="background-color: var(--white); padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <h2 class="section-title reveal">Director's Message</h2>
+            <div class="about-grid" style="align-items: start;">
+                <div class="about-img reveal" style="text-align: center;">
+                    <!-- Yahan Director ki photo ka link dalein -->
+                    <img src="ranjan sir.jfif" alt="Director" style="max-width: 300px; border-radius: 50%; border: 5px solid var(--gold); margin: 0 auto;">
+                    <h3 style="color: var(--primary-blue); margin-top: 15px;">Mr. Ranjan Kumar Pattanayak</h3>
+                    <p style="color: var(--gold); font-weight: 600;">Director, Dream India School</p>
+                </div>
+                <div class="about-text reveal" style="background: var(--light-bg); padding: 30px; border-radius: 15px;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold); margin-bottom: 10px;"></i>
+                    <p style="font-style: italic; font-size: 1.05rem; line-height: 1.8;">"Dear Parents and Students, Welcome to Dream India School. We believe that education is not just about scoring marks, but about building character, fostering curiosity, and preparing children for life. Our dedicated team ensures that every child receives personal attention and the right environment to flourish. We look forward to partnering with you in your child's journey of growth and success."</p>
+                </div>
+            </div>
+        </div>
+
+            </section>
+
+                <!-- Principal's Message Section -->
+    <section id="principal" class="about" style="background-color: var(--light-bg); padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <h2 class="section-title reveal">Principal's Message</h2>
+            <div class="about-grid" style="align-items: start;">
+                <div class="about-img reveal" style="text-align: center;">
+                    <!-- Yahan Principal ki photo ka link dalein -->
+                    <img src="principal.jpeg" alt="Principal" style="max-width: 300px; border-radius: 50%; border: 5px solid var(--gold); margin: 0 auto;">
+                    <h3 style="color: var(--primary-blue); margin-top: 15px;">Suniti Kumar Pattnaik</h3>
+                    <p style="color: var(--gold); font-weight: 600;">Principal, Dream India School</p>
+                </div>
+                <div class="about-text reveal" style="background: var(--white); padding: 30px; border-radius: 15px;">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold); margin-bottom: 10px;"></i>
+                    <p style="font-style: italic; font-size: 1.05rem; line-height: 1.8;">"Dear Parents and Students, Welcome to Dream India School. Our mission is to provide a nurturing environment where every child can excel academically and personally. We are committed to fostering a love for learning, encouraging creativity, and building strong character. Our dedicated faculty works tirelessly to ensure that each student reaches their full potential. Together, let us build a brighter future for your child."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Academics Section -->
+
+        <!-- Academics Section -->
+    <section id="academics" class="academics">
+        <div class="container">
+            <h2 class="section-title reveal">Our Unique Academic Program</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 40px; font-size: 1.1rem; max-width: 800px; margin-inline: auto;" class="reveal">
+                Dream India School designed a Unique Academic Program to meet the learning needs of different grades of students.
+            </p>
+            
+            <div class="cards-grid">
+                <!-- Pre-Primary -->
+                <div class="card reveal">
+                    <img src="acad_1.png" alt="Pre-Primary School">
+                    <div class="card-content">
+                        <h3>Pre-Primary School</h3>
+                        <p>Our Pre-Primary education is endowed with a distinct environment where all aspects of childhood personality are crafted in a balanced way, unleashing creativity and pre-primary academic excellence.</p>
+                    </div>
+                </div>
+                
+                <!-- Primary -->
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <img src="acad_2.png" alt="Primary School">
+                    <div class="card-content">
+                        <h3>Primary School</h3>
+                        <p>Our Primary school education infuses within our students the desire to learn, the curiosity to know more, kindness towards society, and skills to lead in future.</p>
+                    </div>
+                </div>
+                
+                <!-- Middle School -->
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <img src="acad_3.jfif" alt="Middle School">
+                    <div class="card-content">
+                        <h3>Middle School</h3>
+                        <p>DIS has woven the approach of core experiential learning with technology. We begin to pass the envelope of IIT & Medicine foundation courses to provide a robust approach to qualitative learning.</p>
+                    </div>
+                </div>
+                
+                <!-- High School -->
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <img src="acad_4.png" alt="High School">
+                    <div class="card-content">
+                        <h3>High School</h3>
+                        <p>High School is the most critical juncture of career development. We focus on 'IIT & Medicine Foundation' classes to absorb conscience, capability, and credibility for future leaders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Programs (IIT/Medicine & General Studies) -->
+            <div class="special-programs" style="margin-top: 60px;">
+                <h3 class="section-title reveal" style="font-size: 2rem;">Special Foundation Programs</h3>
+                <div class="program-grid reveal">
+                    
+                    <div class="program-box">
+                        <i class="fas fa-atom program-icon"></i>
+                        <h4>Integrated IIT / Medicine Foundation</h4>
+                        <p>DIS pays special attention to students' exceptional flair for Math and Science. We offer an integrated IIT / Medicine foundation program for classes VI - X students to give the much-needed extra input for carving out a successful career.</p>
+                        <p>This integrated foundation program is crafted and imparted with the regular curriculum to enrich the students' analytical skills and subject knowledge, helping them appear for competitive exams like IIT / Medicine confidently.</p>
+                    </div>
+
+                    <div class="program-box">
+                        <i class="fas fa-globe program-icon"></i>
+                        <h4>General Studies (VI - X) & GK (I - V)</h4>
+                        <p>We train our students, especially in General knowledge / General Studies to keep them updated with what is happening across the globe and to appear for all sorts of competitive exams across India like IIT / Medicine / UPSC etc. from an early age confidently.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CBSE Mandatory Disclosure Section -->
+    <section id="disclosure" class="disclosure">
+        <div class="container">
+            <h2 class="section-title reveal">Mandatory Public Disclosure</h2>
+            
+            <div class="disclosure-container reveal">
+                <div class="disclosure-grid">
+                    
+                    <!-- Category 1: General Info -->
+                    <div class="disclosure-category">
+                        <h3><i class="fas fa-info-circle" style="color: var(--gold);"></i> General Information</h3>
+                        <ul class="download-list">
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>School Details & Affiliation</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Staff Statement & Teacher Details</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>School Managing Committee</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2: Documents & Certificates -->
+                    <div class="disclosure-category">
+                        <h3><i class="fas fa-certificate" style="color: var(--gold);"></i> Documents & Certificates</h3>
+                        <ul class="download-list">
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Fire Safety Certificate</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Building Safety Certificate</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Water & Sanitation Certificate</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3: Academics & Results -->
+                    <div class="disclosure-category">
+                        <h3><i class="fas fa-chart-line" style="color: var(--gold);"></i> Academics & Results</h3>
+                        <ul class="download-list">
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Fee Structure of the School</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Annual Academic Calendar</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="download-btn">
+                                    <span>Board Exam Results (Last 3 Years)</span>
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Best Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <h2 class="section-title reveal">Best Results Year After Year</h2>
+            
+            <div class="results-grid">
+                <!-- Left Side: Result Points -->
+                <div class="results-content reveal">
+                    <ul class="results-list">
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4>Highest Success Rate</h4>
+                                <p>Consistent highest success rate in IIT's and Medical entrance seats.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Premier Institutes</h4>
+                                <p>Hundreds of seats in premier institutes like IIIT, BITS Pilani, VIET, AIIMS etc.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-medal"></i>
+                            <div>
+                                <h4>State & District Toppers</h4>
+                                <p>Several state and district toppers in nationwide talent tests like A.S.Rao Science Olympiad, VCCE, Unified Council etc.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>Consistent Top Grades</h4>
+                                <p>Top grades in 10th examinations every year with more than 50% of students scoring above 500/600.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Side: Highlight Box -->
+                <div class="results-highlight reveal" style="transition-delay: 0.2s;">
+                    <div class="highlight-box">
+                        <i class="fas fa-award"></i>
+                        <h3>100%</h3>
+                        <p>Excellent Board Results</p>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 20px; background: var(--gold); color: var(--primary-blue);">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>10/10</h3>
+                        <p>CGPA Achievers in 10th</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+        <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2 class="section-title reveal">Our Facilities</h2>
+            
+            <div class="facility-grid">
+                <!-- 1. Computer Lab -->
+                <div class="facility-card reveal">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Computer Lab</h3>
+                    <p>Full-fledged computer lab to integrate technology in support of classroom learning, with Online Teaching Classes accessible even to remote areas.</p>
+                </div>
+
+                <!-- 2. Digital & Online Teaching -->
+                <div class="facility-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Digital Classrooms</h3>
+                    <p>Equipped with Modern Audio-Visual devices and digital content. Acts as Dream Remote Teaching Room (DRTR) to learn from the best teachers globally.</p>
+                </div>
+
+                <!-- 3. English Language Lab -->
+                <div class="facility-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-language"></i>
+                    <h3>English Language Lab</h3>
+                    <p>Embedded English software into computers, specially designed to overcome language challenges across heterogenic cultures.</p>
+                </div>
+
+                <!-- 4. Science Lab -->
+                <div class="facility-card reveal" style="transition-delay: 0.3s;">
+                    <i class="fas fa-flask"></i>
+                    <h3>Well Equipped Science Lab</h3>
+                    <p>Dedicated science labs to bridge theoretical lessons with practical exposure. All experiments are conducted under the safety and guidance of specialized faculty.</p>
+                </div>
+
+                <!-- 5. Meditation & Yoga (Special Feature) -->
+                <div class="facility-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-spa"></i>
+                    <h3>Meditation & Yoga</h3>
+                    <p>DIS conducts meditation in every session to help students improve concentration, find inner peace, reduce stress, and stay happy.</p>
+                </div>
+
+                <!-- 6. CCTV Surveillance -->
+                <div class="facility-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-video"></i>
+                    <h3>CCTV Surveillance</h3>
+                    <p>24/7 CCTV monitoring across the campus to ensure complete safety and security of our students.</p>
+                </div>
+
+                <!-- 7. E-Office -->
+                <!-- <div class="facility-card reveal" style="transition-delay: 0.3s;">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h3>E-Office</h3>
+                    <p>Equipped with E-Governance to ensure a smooth admission process, fee management, and generation of academic progress reports.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">School Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal"><img src="gallery_1_1.jpg" alt="Gallery 1"></div>
+                <div class="gallery-item reveal"><img src="gallery_2.jfif" alt="Gallery 2"></div>
+                <div class="gallery-item reveal"><img src="gallery_3.png" alt="Gallery 3"></div>
+                <div class="gallery-item reveal"><img src="gallery_4.png" alt="Gallery 4"></div>
+                <div class="gallery-item reveal"><img src="gallery_5.png" alt="Gallery 5"></div>
+                <div class="gallery-item reveal"><img src="about_us.jfif" alt="Gallery 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section id="admission" class="form-section admission">
+        <div class="container">
+            <h2 class="section-title reveal">Admission Enquiry</h2>
+            <div class="form-container reveal">
+                <form id="admissionForm">
+                    <div class="input-group">
+                        <label for="stdName">Student Name</label>
+                        <input type="text" id="stdName" required placeholder="Enter student's full name">
+                    </div>
+                    <div class="input-group">
+                        <label for="parentName">Parent's Name</label>
+                        <input type="text" id="parentName" required placeholder="Enter parent's name">
+                    </div>
+                    <div class="input-group">
+                        <label for="classSelect">Seeking Admission For Class</label>
+                        <select id="classSelect" required>
+                            <option value="">Select Class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="Class 1">Class 1</option>
+                            <option value="Class 2">Class 2</option>
+                            <option value="Class 3">Class 3</option>
+                            <option value="Class 4">Class 4</option>
+                            <option value="Class 5">Class 5</option>
+                            <option value="Class 6">Class 6</option>
+                            <option value="Class 7">Class 7</option>
+                            <option value="Class 8">Class 8</option>
+                            <option value="Class 9">Class 9</option>
+                            <option value="Class 10">Class 10</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" required placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit & Connect via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="form-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title reveal">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Sai Priya Nagar, Rayagada, Odisha</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 9439674674</p>
+                    <p><i class="fas fa-envelope"></i> ranjankumar.pattanayak@gmail.com</p>
+                    <p style="margin-top: 30px;">
+                        <a href="https://wa.me/919439674674" target="_blank" class="btn btn-primary" style="background: #25D366; color: white;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </p>
+                </div>
+                <div class="form-container reveal" style="margin: 0; box-shadow: none; background: white; padding: 30px; border: 1px solid #eee;">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <label for="cName">Your Name</label>
+                            <input type="text" id="cName" required placeholder="Enter your name">
+                        </div>
+                        <div class="input-group">
+                            <label for="cPhone">Contact Number</label>
+                            <input type="tel" id="cPhone" required placeholder="Enter mobile number" pattern="[0-9]{10}">
+                        </div>
+                        <div class="input-group">
+                            <label for="cMsg">Message</label>
+                            <textarea id="cMsg" rows="4" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <!-- Updated Big Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Column 1: Brand & About -->
+                <div class="footer-brand">
+                    <!-- Apna Logo Yahan Dalein -->
+                    <img src="DIS logo.png" alt="Dream India School Logo">
+                    <p>Dream India School is committed to providing holistic education that balances academics with co-curricular activities to shape the future leaders of tomorrow.</p>
+                    <div class="social-links">
+                        <!-- Apne Social Media Links Yahan Dalein -->
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/919439674674" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links (Navbar Links) -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#academics"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                        <li><a href="#disclosure"><i class="fas fa-chevron-right"></i> Disclosure</a></li>
+                        <li><a href="#facilities"><i class="fas fa-chevron-right"></i> Facilities</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#admission"><i class="fas fa-chevron-right"></i> Admission</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Get In Touch (Contact Details) -->
+                <div class="footer-col">
+                    <h3>Get In Touch</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sai Priya Nagar,<br>Rayagada, Odisha</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:9439674674" style="color: inherit;">+91 9439674674</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span style="word-break: break-all;"><a href="mailto:ranjankumar.pattanayak@gmail.com" style="color: inherit;">ranjankumar.pattanayak<br>@gmail.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: School Hours (Extra Info) -->
+                <div class="footer-col">
+                    <h3>School Hours</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="far fa-clock"></i>
+                            <span>Mon - Fri<br>8:00 AM - 2:00 PM</span>
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i>
+                            <span>Saturday<br>8:00 AM - 12:00 PM</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-times"></i>
+                            <span>Sunday<br>Closed</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Bottom Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Dream India School, Rayagada. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript for Animations, Mobile Menu, and WhatsApp Redirects -->
+    <script>
+        // 1. Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // 2. Scroll Reveal Animations
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // adjust this to trigger earlier/later
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        // Trigger once on load
+        window.onload = reveal;
+
+        // 3. WhatsApp Integration for Admission Form
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const stdName = document.getElementById('stdName').value;
+            const parentName = document.getElementById('parentName').value;
+            const classSelect = document.getElementById('classSelect').value;
+            const phone = document.getElementById('phone').value;
+
+            const waNumber = "919439674674"; // School's WhatsApp Number
+            const message = `*Admission Enquiry*%0A%0A*Student Name:* ${stdName}%0A*Parent Name:* ${parentName}%0A*Class:* ${classSelect}%0A*Contact:* ${phone}`;
+            
+            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        });
+
+        // 4. WhatsApp Integration for Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cName = document.getElementById('cName').value;
+            const cPhone = document.getElementById('cPhone').value;
+            const cMsg = document.getElementById('cMsg').value;
+
+            const waNumber = "919439674674"; // School's WhatsApp Number
+            const message = `*Contact Enquiry*%0A%0A*Name:* ${cName}%0A*Phone:* ${cPhone}%0A*Message:* ${cMsg}`;
+            
+            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
